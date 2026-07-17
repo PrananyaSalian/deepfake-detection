@@ -1,0 +1,10 @@
+Filename,Prediction,Probability
+dkwjwbwgey_29_0.png,Fake,0.1489
+image1.png,Real,0.4344
+image2.png,Fake,0.2409
+image3.png,Real,0.9654
+image4.png,Fake,0.1298
+image5.png,Real,0.4561
+image6.png,Real,0.9654
+image7.png,Fake,0.2409
+image9.jpeg,Fake,0.0016

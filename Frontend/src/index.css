@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Creative design system - organic and unique */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 1.2rem;
+
+    /* Creative color palette */
+    --electric-blue: 217 91% 60%;
+    --coral-pink: 14 100% 68%;
+    --neon-purple: 280 89% 70%;
+    --mint-green: 150 60% 65%;
+    --sunset-orange: 25 95% 65%;
+    
+    /* Organic gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(var(--electric-blue)), hsl(var(--coral-pink)), hsl(var(--neon-purple)));
+    --card-gradient: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(var(--electric-blue) / 0.05));
+    --accent-gradient: linear-gradient(90deg, hsl(var(--coral-pink)), hsl(var(--sunset-orange)));
+    
+    /* Creative shadows */
+    --glow-blue: 0 20px 40px hsl(var(--electric-blue) / 0.3);
+    --glow-coral: 0 20px 40px hsl(var(--coral-pink) / 0.3);
+    --organic-shadow: 0 25px 50px -12px hsl(222.2 84% 4.9% / 0.25);
+    
+    /* Typography */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    
+    /* Animations */
+    --bounce-in: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark mode adjustments for Lovable design */
+    --hero-gradient: linear-gradient(135deg, hsl(222.2 84% 4.9%), hsl(217.2 32.6% 17.5%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-body);
+  }
+  
+  .hero-gradient {
+    background: var(--hero-gradient);
+    position: relative;
+  }
+  
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/src/assets/pattern-bg.jpg') center/cover;
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+  }
+  
+  .creative-card {
+    background: var(--card-gradient);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--electric-blue) / 0.2);
+    box-shadow: var(--organic-shadow);
+    transform: rotate(-0.5deg);
+    transition: all 0.4s var(--bounce-in);
+  }
+  
+  .creative-card:hover {
+    transform: rotate(0deg) translateY(-8px);
+    box-shadow: var(--glow-blue);
+  }
+  
+  .creative-card:nth-child(even) {
+    transform: rotate(0.5deg);
+  }
+  
+  .creative-card:nth-child(even):hover {
+    transform: rotate(0deg) translateY(-8px);
+  }
+  
+  .organic-input {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    background-clip: padding-box;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s var(--smooth);
+  }
+  
+  .organic-input:focus {
+    background: rgba(255, 255, 255, 1);
+    border-color: hsl(var(--electric-blue));
+    box-shadow: 0 0 0 4px hsl(var(--electric-blue) / 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .accent-text {
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+  
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-element:nth-child(even) {
+    animation-delay: -3s;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    50% { transform: translateY(-20px) rotate(0deg); }
+    75% { transform: translateY(-10px) rotate(-1deg); }
+  }
+  
+  .creative-button {
+    background: var(--accent-gradient);
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1000px) rotateX(0deg);
+    transition: all 0.3s var(--bounce-in);
+  }
+  
+  .creative-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+  }
+  
+  .creative-button:hover {
+    transform: perspective(1000px) rotateX(5deg) translateY(-3px);
+    box-shadow: var(--glow-coral);
+  }
+  
+  .creative-button:hover::before {
+    left: 100%;
+  }
+  
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .asymmetric-grid > *:nth-child(3n+1) {
+    margin-top: 2rem;
+  }
+  
+  .asymmetric-grid > *:nth-child(3n+2) {
+    margin-top: -1rem;
+  }
+}

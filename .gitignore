@@ -1,0 +1,8 @@
+Frontend/node_modules/
+image-detection/venv/
+image-detection/__pycache__/
+video-detection/.venv/
+video-detection/__pycache__/
+video-detection/frames/
+video-detection/videos/
+video-detection/optical_flow/
